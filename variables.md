@@ -89,5 +89,3 @@ The first example collects the input, converts it to an integer, and then assign
 
 Both examples are valid and have their uses.
 
-[For more info on variables, download the CS50 Variables Reference Sheet](https://ap.cs50.school/assets/pdfs/unit1/variables.pdf)
-
