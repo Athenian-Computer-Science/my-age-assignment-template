@@ -1,6 +1,6 @@
 # My Age Assignment
 ## Background information: 
-Read this information onv[**Variables**](https://github.com/Athenian-Computer-Science/my-age-assignment-template/blob/master/variables.md) before beginning the exercise.
+Read this information on [**Variables**](https://github.com/Athenian-Computer-Science/my-age-assignment-template/blob/master/variables.md) before beginning the exercise.
 
 
 ## Problem Description
