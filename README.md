@@ -1,5 +1,6 @@
 # My Age Assignment
-Background information: Variables
+## Background information: 
+[Variables](https://github.com/Athenian-Computer-Science/my-age-assignment-template/blob/master/variables.md)
 
 
 ## Problem Description
