@@ -10,40 +10,33 @@ In this exercise you will learn about:
 ## What is a Variable?
 In computer programming, a **variable** is a container that holds numbers, words, or other types of data to use in our program. Variables in programming are similar to the variables we use in math class, since they both represent a value. Unlike variables in math, variables in programming do not represent an "unknown", and hold values that can change as the program executes.
 
-Another difference is in variable names. In math, variables are only one letter long, as in *x*, or *y*, or *n*. In most programming languages, variable names can be a single letter, a word or a phrase (as long as there are no spaces). In fact, it's considered good programming practice, to use variable names that represent the data they are being used to store.
+Another difference is in variable names. In math, variables are only one letter long, as in *x*, or *y*, or *n*. In most programming languages, variable names can be a single letter, a word or a phrase (as long as there are no spaces). In fact, it's considered good programming practice to use variable names that represent the data they are being used to store.
 
 For instance, we might store a name in a variable `name`, and an age in a variable `age`. We can combine multiple words with underscores, such as `student_name`, and `teacher_name`. But if we create a variable name with a space in it, such as `student name`, our program won't understand what we want it to do!
 
-{% next %}
+## Defining a Variable
+In the Python programming language, we have to create (or _declare_) a variable before we can use it. We do this by telling the program the name of our variable and setting it equal to something. The type of the variable (str, int, float, bool) will depend on the type we use to declare it.
 
-## Declaring a Variable
-In the C programming language, we have to create, or declare, a variable before we can use it. We do this by telling the program the type of data our variable will hold, followed by the name of the variable, as in:
-
-```c
-int age;
+```
+name = 'Mateo'
+age = 16
+speed = 6.51
 ```
 
-This declares the variable `age` as an integer, meaning it can only hold whole numbers.
+This defines the variable `name` a string (str), age as an integer (int), and speed as a float. 
 
-If we use a variable before declaring it, we'll generate an error when we try to compile our program.
-
-{% next %}
-
-## Assigning a Value to a Variable
-
-To store a number in the variable we just declared we can write:
-
-```c
-age = 18;
-```
-The `=` sign here works differently than it does in your math class. In programming, `=` means assignment, not equality. It says to the computer: `age` gets 18.
+The `=` sign here works differently than it does in your math class. In programming, `=` means assignment, not equality. It says to the computer: `age` gets 16.
 
 Assignment always works from right to left. In other words, the value on the right side of the `=` is evaluated first and then stored in the variable whose name is on the left side of the `=`.
 
+If you use a variable before defining it, you can generate errors or have unexpected results (depending on how you are attempting to use it).
+
+
+
 One thing that look strange to most people who start programming for the first time, is an expression like:
 
-```c
-age = age + 1;
+```python
+age = age + 1
 ```
 
 In math class, we know this can never be true! How can age equal itself plus one?
@@ -52,29 +45,20 @@ But if we remember that the `=` represents assignment, and not equality, we can 
 
 Keep in mind when we write a statement like this, we must have already assigned an initial value to `age`. In other words:
 
-```c
-int age;
+```python
 age = age + 1;
 ```
 
-will generate an error, because `age` is declared, but not have a value when we try to add one to it.
+will generate an error, because `age` has not yet been defined.
 
 Instead, we'll assign a starting value to `age` and then increase it by one:
 
-```c
-int age;
-age = 18;
+```python
+age = 16;
 age = age + 1;
 ```
 
-A shortcut we can take is to declare and initialize a variable in one line of code like this:
-
-```c
-int age = 18;
-```
-
-{% next %}
-
+Now, `age` will have a value of 17.
 
 ## Getting User Input
 
