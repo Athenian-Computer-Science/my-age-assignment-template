@@ -1,4 +1,6 @@
-# My Age assignment
+# My Age Assignment
+Background information: Variables
+
 
 ## Problem Description
 In this assignment, you are tasked with modifying 4 different functions to give the user's age now, in 1 year, in 10 years and in 50 years. The goal is for you to practice working with variables and print statements. Take care when modifying the starter code - read the comments carefully so you know what to change and what to leave alone.
