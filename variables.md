@@ -46,7 +46,7 @@ But if we remember that the `=` represents assignment, and not equality, we can 
 Keep in mind when we write a statement like this, we must have already assigned an initial value to `age`. In other words:
 
 ```python
-age = age + 1;
+age = age + 1
 ```
 
 will generate an error, because `age` has not yet been defined.
@@ -54,8 +54,8 @@ will generate an error, because `age` has not yet been defined.
 Instead, we'll assign a starting value to `age` and then increase it by one:
 
 ```python
-age = 16;
-age = age + 1;
+age = 16
+age = age + 1
 ```
 
 Now, `age` will have a value of 17.
@@ -64,113 +64,30 @@ Now, `age` will have a value of 17.
 
 So we've seen how we can code values into a variable by typing them into our program, but what if we want a use a different value for a variable each time we run it?
 
-In this case we can use CS50's user input functions, to prompt for a value in the terminal.
+In this case we can use Python's user input function (`input()`), to prompt for a value in the terminal.
 
-![Prompting](https://raw.githubusercontent.com/cs50nestm/cs50labs/2019/variables/variables2.gif)
-
-There are several CS50 user input functions, depending on the type of data (data type) that we want our variable to hold. Since `age` is an int, we could user `get_int()` to prompt for a value like this:
-
-```c
-age = get_int("Enter Your Age: ");
+```python
+age = input("Enter Your Age: ")
 ```
 
-The function `get_int()` takes an argument, which is the text that we want to prompt the user with. Note that the prompt is wrapped inside of double quotes, `"` since it is a string, the argument is inside of parentheses `(` and `)` and the line ends with `;`.
+Note that `input()` takes use input as a string type, no matter what the user types. If you ask for the user's age and they type `10 ` then Python will assign the string `"1-"` to `age`.
 
-Do note that `age` would have had to be declared earlier on in our program for this code to execute.
+`age = "10"`
+ If you want to store it differently, you need to tell Python what data type you want. For example:
+ 
+ ```python
+ age = int(input('Enter your age: ')`
+ ```
+ 
+ or
+ ```python
+ age = input('Enter your age: ')
+ age = int(age)
+ ```
 
-We could, of course, declare `age` and get user input in one line of code:
+The first example collects the input, converts it to an integer, and then assigns that value to `age`. The second collects the input as a string and assigns it to `age` without converting it. In the next line, the value of `age` is converted to an integer and the new type is reassigned to `age`.
 
-```c
-int age = get_int("Enter Your Age: ");
-```
-
-To use the CS50 user input functions, we do have to include the CS50 library by typing in:
-
-```
-#include <cs50.h>
-```
-
-at the top of our program.
-
-{% next %}
-
-## Now It's Your Turn!
-
-Though the program on the right is correct and will execute properly, it is not well designed. For one thing, what if we want to start with different ages each time we run it? It's a lot of work to have to change each occurrence of `17` to whatever age the user wants to use!
-
-(As well soon see, the code also contains **magic numbers** which will soon learn about in a future lab!)
-
-So your job is to edit the code provided, to use one or more variables, along with user input.
-
-To start, declare a new variable `age` as an int and use `get_int()` with get a value from the user.
-
-Now replace every occurrence of `17` with `age`, so that the program uses the variable rather than the hardcoded number for each calculation.
-
-When you are done, compile your program by typing the following in the terminal window after the `$` prompt followed by enter:
-
-```
-make variables
-```
-
-If you see any errors, it's time to debug! You may have left out something small like a `;` or misspelled something. If you have a hard time finding your error, try "prepending" `help50` to your command like this:
-
-```
-help50 make variables
-```
-
-Once you feel you've corrected any errors, execute `make variables` again, and repeat this process until no more errors appear.
-
-Then execute your program, by typing in the following, again followed with enter:
-
-```
-./variables
-```
-
-Hopefully you should now see the prompt you've written. Enter a number and see what happens!
-
-{% next %}
-
-## Testing
-
-### Correctness
-
-Practice testing your own code by trying out different kinds of inputs. We want to get into the habit of testing our code not only valid inputs, but for invalid inputs, as well as "corner cases", which would be inputs that aren't technically invalid, but are not what you might normally expect to see as an input.
-
-What happens if you enter name instead of your age, when you get the prompt, as in:
-
-```
-Enter Your Age: Brian
-Enter Your Age:
-```
-
-Does the program come back and ask again? It should do this because `get_int()` only accepts integers.
-
-Or if you enter a number with a decimal point:
-
-```
-Enter Your Age: 17.5
-Enter Your Age:
-```
-
-The program again should come back and repropmt.
-
-What if you enter a negative number? At the prompt, try entering:
-
-```
-Enter Your Age: -15
-```
-
-You might see your program do the calculation correctly, but how can one be `-15` years old?
-
-Eventually we will see how to validate user inputs, but for now, our goal is to practice using variables, and to write code that is syntactically correct, which will compile and execute.
-
-### Style
-
-Since we want to get into good habits early, check that your indentation, and spacing is correct, by typing:
-
-```
-style50 variables.c
-```
+Both examples are valid and have their uses.
 
 [For more info on variables, download the CS50 Variables Reference Sheet](https://ap.cs50.school/assets/pdfs/unit1/variables.pdf)
 
